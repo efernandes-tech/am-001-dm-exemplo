@@ -5,3 +5,8 @@ app.controller('ToastEx', function($scope, $mdToast) {
             .hideDelay(3000)
     );
 });
+
+app.controller('layoutController', layoutController);
+
+function layoutController ($scope) {
+}

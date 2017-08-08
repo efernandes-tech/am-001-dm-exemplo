@@ -9,3 +9,4 @@
     - Iniciadas com "md".
 - Serviços como o mdToast fornecem funcionalidades extras.
 - Deve ser escolhido 3 cores com tema da aplicação.
+- Layouts utilizam o flexbox do CSS3.

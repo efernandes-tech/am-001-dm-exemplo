@@ -2,25 +2,74 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <style>
+        .box {
+            color:white;
+            padding:10px;
+            text-align:center;
+            border-style: inset;
+        }
+        .red {
+            background:green;
+        }
+        .orange {
+            background:orange;
+        }
+    </style>
 </head>
-<body ng-app="exemplo" ng-controller="ToastEx" ng-cloak>
-    <md-toolbar class="md-warn">
-        <div class="md-toolbar-tools">
-            <h2 class="md-flex">Hello World Angular Material</h2>
+<body ng-app="exemplo" ng-cloak>
+    <div ng-controller="ToastEx">
+        <md-toolbar class="md-warn">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Hello World Angular Material</h2>
+            </div>
+        </md-toolbar>
+        <md-content flex layout-padding>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <md-button>Clique aqui!</md-button>
+            <md-button class="md-raised md-primary md-hue-1">Clique aqui!</md-button>
+            <md-button class="md-primary">Clique aqui!</md-button>
+            <md-button class="md-primary md-hue-1">Clique aqui!</md-button>
+            <md-button class="md-primary md-hue-2">Clique aqui!</md-button>
+            <md-button class="md-accent">ou talvez aqui</md-button>
+            <md-button class="md-warn">Cuidado</md-button>
+        </md-content>
+    </div>
+    <div id="layoutContainer" ng-controller="layoutController as ctrl" style="height:100px;" ng-cloak>
+        <div layout="row" layout-xs="column">
+            <div flex class="red box">Linha 1: Item 1</div>
+            <div flex="20" class="orange box">Linha 1: Item 2</div>
         </div>
-    </md-toolbar>
-    <md-content flex layout-padding>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <md-button>Clique aqui!</md-button>
-        <md-button class="md-raised md-primary md-hue-1">Clique aqui!</md-button>
-        <md-button class="md-primary">Clique aqui!</md-button>
-        <md-button class="md-primary md-hue-1">Clique aqui!</md-button>
-        <md-button class="md-primary md-hue-2">Clique aqui!</md-button>
-        <md-button class="md-accent">ou talvez aqui</md-button>
-        <md-button class="md-warn">Cuidado</md-button>
-    </md-content>
+        <div layout="column" layout-xs="column">
+            <div flex="33" class="red box">Coluna 1: item 1</div>
+            <div flex="66" class="orange box">Coluna 1: item 2</div>
+        </div>
+        <div layout="row" layout-wrap>
+            <div flex="30" class="red box">
+                [flex="30"]
+            </div>
+            <div flex="45" class="orange box">
+                [flex="45"]
+            </div>
+            <div flex="25" class="red box">
+                [flex="25"]
+            </div>
+            <div flex="33" class="red box">
+                [flex="33"]
+            </div>
+            <div flex="66" class="orange box">
+                [flex="66"]
+            </div>
+            <div flex="50" class="orange box">
+                [flex="50"]
+            </div>
+            <div flex class="red box">
+                [flex]
+            </div>
+        </div>
+    </div>
 </body>
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular-animate/angular-animate.js"></script>
