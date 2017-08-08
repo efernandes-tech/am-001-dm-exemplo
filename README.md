@@ -8,3 +8,4 @@
 - Diretivas do angular material são tags HTML.
     - Iniciadas com "md".
 - Serviços como o mdToast fornecem funcionalidades extras.
+- Deve ser escolhido 3 cores com tema da aplicação.
