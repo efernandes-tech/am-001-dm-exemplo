@@ -37,6 +37,37 @@
             <md-button class="md-warn">Cuidado</md-button>
         </md-content>
     </div>
+    <hr>
+    <div ng-controller="autoCompleteController as estApp" layout="column" ng-cloak>
+        <md-content class="md-padding">
+            <form ng-submit="$event.preventDefault()">
+                <md-autocomplete
+                    ng-disabled="estApp.isDisabled"
+                    md-no-cache="estApp.noCache"
+                    md-selected-item="estApp.selectedItem"
+                    md-search-text-change="estApp.searchTextChange(estApp.searchText)"
+                    md-search-text="estApp.searchText"
+                    md-selected-item-change="estApp.selectedItemChange(item)"
+                    md-items="item in estApp.queryBusca(estApp.searchText)"
+                    md-item-text="item.display"
+                    md-min-length="0"
+                    placeholder="Digite o nome do estado...">
+                    <md-item-template>
+                        <span md-highlight-text="estApp.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        Nenhum resultado encontrado para "{{estApp.searchText}}".
+                        <a ng-click="estApp.novoEstado(estApp.searchText)">Criar um novo!</a>
+                    </md-not-found>
+                </md-autocomplete>
+                <br>
+                <md-checkbox ng-model="estApp.simularQuery">Exibir barra de progresso?</md-checkbox>
+                <md-checkbox ng-model="estApp.noCache">Desabilitar cache?</md-checkbox>
+                <md-checkbox ng-model="estApp.isDisabled">Desabilitar campo de busca?</md-checkbox>
+            </form>
+        </md-content>
+    </div>
+    <hr>
     <div id="layoutContainer" ng-controller="layoutController as ctrl" style="height:100px;" ng-cloak>
         <div layout="row" layout-xs="column">
             <div flex class="red box">Linha 1: Item 1</div>
@@ -77,5 +108,5 @@
 <script src="node_modules/angular-messages/angular-messages.js"></script>
 <script src="node_modules/angular-material/angular-material.js"></script>
 <script src="js/app.js"></script>
-<script src="js/myController.js"></script>
+<script src="js/controllers.js"></script>
 </html>
