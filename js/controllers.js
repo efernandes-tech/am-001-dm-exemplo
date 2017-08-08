@@ -1,4 +1,6 @@
-app.controller('ToastEx', function($scope, $mdToast) {
+// Exemplo de uso do toast.
+
+app.controller('toastController', function($scope, $mdToast) {
     $mdToast.show(
         $mdToast.simple('Hello World Toast!')
         .position('right top')
@@ -6,10 +8,7 @@ app.controller('ToastEx', function($scope, $mdToast) {
         );
 });
 
-app.controller('layoutController', layoutController);
-
-function layoutController($scope) {
-}
+// Exemplo de uso do autocomplete.
 
 app.controller('autoCompleteController', autoCompleteController);
 
@@ -73,4 +72,23 @@ function autoCompleteController($timeout, $q, $log) {
             return (state.value.indexOf(lowercaseQuery) === 0);
         };
     }
+}
+
+// Exemplo de usa do bottonsheet.
+
+app.controller('bottomSheetController', bottomSheetController);
+
+function bottomSheetController ($scope, $mdBottomSheet) {
+    $scope.abrirBottomSheet = function() {
+        $mdBottomSheet.show({
+            template: '<md-bottom-sheet>Aprender <b>Angular Material</b>!!</md-bottom-sheet>'
+        });
+    };
+}
+
+// Exemplo de uso do flexbox.
+
+app.controller('layoutController', layoutController);
+
+function layoutController($scope) {
 }

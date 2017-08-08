@@ -9,16 +9,22 @@
             text-align:center;
             border-style: inset;
         }
-        .red {
+        .green {
             background:green;
         }
         .orange {
             background:orange;
         }
+        .red {
+            background: red;
+        }
+        .blue {
+            background: blue;
+        }
     </style>
 </head>
 <body ng-app="exemplo" ng-cloak>
-    <div ng-controller="ToastEx">
+    <div ng-controller="toastController">
         <md-toolbar class="md-warn">
             <div class="md-toolbar-tools">
                 <h2 class="md-flex">Hello World Angular Material</h2>
@@ -37,7 +43,9 @@
             <md-button class="md-warn">Cuidado</md-button>
         </md-content>
     </div>
+
     <hr>
+
     <div ng-controller="autoCompleteController as estApp" layout="column" ng-cloak>
         <md-content class="md-padding">
             <form ng-submit="$event.preventDefault()">
@@ -67,21 +75,40 @@
             </form>
         </md-content>
     </div>
+
     <hr>
+
+    <div ng-controller="bottomSheetController as ctrl" layout="column">
+        <md-content class="md-padding">
+            <form ng-submit="$event.preventDefault()">
+                <md-button class="md-raised md-primary" ng-click="abrirBottomSheet()">
+                    Abrir Bottom Sheet!
+                </md-button>
+            </form>
+        </md-content>
+    </div>
+
+    <hr>
+
     <div id="layoutContainer" ng-controller="layoutController as ctrl" style="height:100px;" ng-cloak>
         <div layout="row" layout-xs="column">
-            <div flex class="red box">Linha 1: Item 1</div>
+            <div flex class="green box">Linha 1: Item 1</div>
             <div flex="20" class="orange box">Linha 1: Item 2</div>
         </div>
         <div layout="column" layout-xs="column">
-            <div flex="33" class="red box">Coluna 1: item 1</div>
+            <div flex="33" class="green box">Coluna 1: item 1</div>
             <div flex="66" class="orange box">Coluna 1: item 2</div>
         </div>
+    </div>
+
+    <hr>
+
+    <div id="layoutContainer" ng-controller="layoutController as ctrl" style="height:100px;" ng-cloak>
         <div layout="row" layout-wrap>
             <div flex="30" class="red box">
                 [flex="30"]
             </div>
-            <div flex="45" class="orange box">
+            <div flex="45" class="blue box">
                 [flex="45"]
             </div>
             <div flex="25" class="red box">
@@ -90,10 +117,10 @@
             <div flex="33" class="red box">
                 [flex="33"]
             </div>
-            <div flex="66" class="orange box">
+            <div flex="66" class="blue box">
                 [flex="66"]
             </div>
-            <div flex="50" class="orange box">
+            <div flex="50" class="blue box">
                 [flex="50"]
             </div>
             <div flex class="red box">
