@@ -74,7 +74,7 @@ function autoCompleteController($timeout, $q, $log) {
     }
 }
 
-// Exemplo de usa do bottonsheet.
+// Exemplo de usa do bottomsheet.
 
 app.controller('bottomSheetController', bottomSheetController);
 
@@ -83,6 +83,16 @@ function bottomSheetController ($scope, $mdBottomSheet) {
         $mdBottomSheet.show({
             template: '<md-bottom-sheet>Aprender <b>Angular Material</b>!!</md-bottom-sheet>'
         });
+    };
+}
+
+// Exemplo de uso de input.
+
+app.controller('inputController', inputController);
+
+function inputController($scope) {
+    $scope.project = {
+        comentarios: 'Comentários',
     };
 }
 

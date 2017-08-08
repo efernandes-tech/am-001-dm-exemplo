@@ -10,3 +10,7 @@
 - Serviços como o mdToast fornecem funcionalidades extras.
 - Deve ser escolhido 3 cores com tema da aplicação.
 - Layouts utilizam o flexbox do CSS3.
+- Diretivas com destaque no angular material:
+    - Toast
+    - Autocomplete (pesquisar do google)
+    - Bottomsheet

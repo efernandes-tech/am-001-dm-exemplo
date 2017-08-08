@@ -24,24 +24,25 @@
     </style>
 </head>
 <body ng-app="exemplo" ng-cloak>
+    <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Hello World Angular Material</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex layout-padding>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <md-button>Clique aqui!</md-button>
+        <md-button class="md-raised md-primary md-hue-1">Clique aqui!</md-button>
+        <md-button class="md-primary">Clique aqui!</md-button>
+        <md-button class="md-primary md-hue-1">Clique aqui!</md-button>
+        <md-button class="md-primary md-hue-2">Clique aqui!</md-button>
+        <md-button class="md-accent">ou talvez aqui</md-button>
+        <md-button class="md-warn">Cuidado</md-button>
+    </md-content>
+
     <div ng-controller="toastController">
-        <md-toolbar class="md-warn">
-            <div class="md-toolbar-tools">
-                <h2 class="md-flex">Hello World Angular Material</h2>
-            </div>
-        </md-toolbar>
-        <md-content flex layout-padding>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <md-button>Clique aqui!</md-button>
-            <md-button class="md-raised md-primary md-hue-1">Clique aqui!</md-button>
-            <md-button class="md-primary">Clique aqui!</md-button>
-            <md-button class="md-primary md-hue-1">Clique aqui!</md-button>
-            <md-button class="md-primary md-hue-2">Clique aqui!</md-button>
-            <md-button class="md-accent">ou talvez aqui</md-button>
-            <md-button class="md-warn">Cuidado</md-button>
-        </md-content>
     </div>
 
     <hr>
@@ -84,6 +85,40 @@
                 <md-button class="md-raised md-primary" ng-click="abrirBottomSheet()">
                     Abrir Bottom Sheet!
                 </md-button>
+            </form>
+        </md-content>
+    </div>
+
+    <hr>
+
+    <div id="inputContainer" ng-controller="inputController as ctrl" ng-cloak>
+        <md-content layout-padding>
+            <form name="formProjeto">
+                <md-input-container class="md-block">
+                    <label>Usuário</label>
+                    <input required name="usuario" ng-model="project.usuario">
+                    <div ng-messages="formProjeto.usuario.$error">
+                        <div ng-message="required">Obrigatório.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input required type="email" name="emailUsuario" ng-model="project.emailUsuario"
+                    minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="formProjeto.emailUsuario.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Seu email deve conter entre 10 e 100 caracteres de tamanho e deve ser um endereço válido.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Comentários</label>
+                    <input md-maxlength="300" required name="comentarios" ng-model="project.comentarios">
+                    <div ng-messages="formProjeto.comentarios.$error">
+                        <div ng-message="required">Obrigatório.</div>
+                        <div ng-message="md-maxlength">Os comentários devem ter menos de 300 caracteres.</div>
+                    </div>
+                </md-input-container>
             </form>
         </md-content>
     </div>
