@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
 </head>
-<body ng-app="exemplo" ng-cloak>
+<body ng-app="exemplo" ng-controller="ToastEx" ng-cloak>
     <md-toolbar class="md-warn">
         <div class="md-toolbar-tools">
             <h2 class="md-flex">Hello World Angular Material</h2>
@@ -23,6 +23,13 @@
 <script src="node_modules/angular-messages/angular-messages.js"></script>
 <script src="node_modules/angular-material/angular-material.js"></script>
 <script type="text/javascript">
-    angular.module('exemplo', ['ngMaterial']);
+    angular.module('exemplo', ['ngMaterial'])
+        .controller('ToastEx', function($scope, $mdToast) {
+            $mdToast.show(
+                $mdToast.simple('Hello World Toast!')
+                    .position('right bottom')
+                    .hideDelay(3000)
+            );
+        });
 </script>
 </html>
