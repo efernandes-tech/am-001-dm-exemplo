@@ -1,17 +1,3 @@
 # am-001-dm-exemplo
 
-##### Anotações:
-- Link:
-    http://www.devmedia.com.br/primeiros-passos-com-o-angular-material/34537
-- Instalar o angular material:
-    npm install angular-material --save
-- Diretivas do angular material são tags HTML.
-    - Iniciadas com "md".
-- Serviços como o mdToast fornecem funcionalidades extras.
-- Deve ser escolhido 3 cores com tema da aplicação.
-- Layouts utilizam o flexbox do CSS3.
-- Diretivas com destaque no angular material:
-    - Toast
-    - Autocomplete (pesquisar do google)
-    - Bottomsheet
-    - Gridlist
+Teste com alguns componentes do Angular Material.
